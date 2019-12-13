@@ -1,0 +1,5 @@
+{
+  "name": "video to image api",
+  "repository": "https://github.com/lpicanco/video-to-image-api",
+  "image": "heroku/nodejs"
+}
