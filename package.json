@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "ffmpeg-extract-frames": "^2.0.2",
+    "newrelic": "^6.2.0",
     "uuid": "^3.3.3"
   }
 }
