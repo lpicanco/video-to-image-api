@@ -1,5 +1,6 @@
 const extractFrames = require('ffmpeg-extract-frames');
 const path = require('path');
+const fs = require('fs')
 const express = require('express');
 const uuidv4 = require('uuid/v4');
 const app = express();
@@ -18,7 +19,17 @@ app.get('/', async (req, res) => {
         ]
       });
 
-    res.sendFile(fileName);
+    res.sendFile(fileName, function (err) {
+      if (err) {
+        console.error(err);
+        res.status(500).end();
+      }
+      try {
+        fs.unlinkSync(fileName);
+      } catch(e) {
+        console.log("error removing ", fileName, e)
+      }
+    });
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
