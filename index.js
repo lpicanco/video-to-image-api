@@ -1,11 +1,10 @@
+require ('newrelic');
+
 const extractFrames = require('ffmpeg-extract-frames');
 const path = require('path');
 const fs = require('fs')
 const express = require('express');
 const uuidv4 = require('uuid/v4');
-
-require ('newrelic');
-
 const app = express();
 const port = process.env.PORT || 3000
 
